@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kebijakan Privasi – Kartu Baca</title>
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary:   #FF6B35;
+      --secondary: #FFD166;
+      --accent:    #06D6A0;
+      --bg:        #FFF9F0;
+      --text:      #2D2D2D;
+      --muted:     #666;
+      --card-bg:   #FFFFFF;
+      --border:    #FFE4C4;
+      --radius:    16px;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      padding: 0 0 60px;
+    }
+
+    /* ── Hero Header ── */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, #FF9F1C 100%);
+      color: #fff;
+      text-align: center;
+      padding: 56px 24px 48px;
+      clip-path: ellipse(100% 88% at 50% 12%);
+    }
+    .hero .logo { font-size: 3.5rem; margin-bottom: 8px; }
+    .hero h1   { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 800; letter-spacing: .5px; }
+    .hero p    { font-size: 1rem; opacity: .92; margin-top: 8px; }
+    .badge {
+      display: inline-block;
+      background: var(--secondary);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: .85rem;
+      border-radius: 99px;
+      padding: 4px 16px;
+      margin-top: 14px;
+    }
+
+    /* ── Container ── */
+    .container { max-width: 820px; margin: 0 auto; padding: 0 20px; }
+
+    /* ── Update bar ── */
+    .update-bar {
+      background: #FFF3CD;
+      border-left: 4px solid var(--secondary);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 10px 18px;
+      font-size: .9rem;
+      color: #856404;
+      margin: 28px 0 0;
+    }
+
+    /* ── Section ── */
+    section { margin-top: 36px; }
+
+    .card {
+      background: var(--card-bg);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.05);
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 14px;
+    }
+    .section-title .icon {
+      background: var(--secondary);
+      border-radius: 50%;
+      width: 36px; height: 36px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+    }
+
+    p   { margin-bottom: 10px; }
+    ul, ol { padding-left: 22px; margin-bottom: 10px; }
+    li  { margin-bottom: 6px; }
+
+    /* ── Highlight box ── */
+    .highlight {
+      background: #E8F8F3;
+      border-left: 4px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+      padding: 12px 16px;
+      margin: 12px 0;
+      font-size: .95rem;
+    }
+
+    /* ── Warning box ── */
+    .warning {
+      background: #FFF0F0;
+      border-left: 4px solid #FF4444;
+      border-radius: 0 10px 10px 0;
+      padding: 12px 16px;
+      margin: 12px 0;
+      font-size: .95rem;
+    }
+
+    /* ── Table ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .92rem;
+      margin: 12px 0;
+    }
+    th {
+      background: var(--primary);
+      color: #fff;
+      padding: 10px 14px;
+      text-align: left;
+    }
+    td { padding: 9px 14px; border-bottom: 1px solid var(--border); }
+    tr:nth-child(even) td { background: #FFF9F0; }
+
+    /* ── Contact card ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 14px;
+    }
+    .contact-item {
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+    }
+    .contact-item .ci-icon { font-size: 1.8rem; }
+    .contact-item strong   { display: block; margin: 6px 0 2px; font-size: .9rem; }
+    .contact-item a        { color: var(--primary); text-decoration: none; font-size: .9rem; }
+    .contact-item a:hover  { text-decoration: underline; }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: 48px;
+      text-align: center;
+      font-size: .82rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .card { padding: 20px 18px; }
+      .hero { padding: 44px 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<div class="hero">
+  <div class="logo">📖</div>
+  <h1>Kebijakan Privasi</h1>
+  <p>Aplikasi <strong>Kartu Baca</strong> – Media Belajar Membaca Anak</p>
+  <span class="badge">🔒 Dirancang Aman untuk Anak-Anak</span>
+</div>
+
+<!-- ═══════════════ KONTEN ═══════════════ -->
+<div class="container">
+
+  <div class="update-bar">
+    📅 <strong>Terakhir diperbarui:</strong> 23 April 2026 &nbsp;|&nbsp; Versi Aplikasi: <strong>1.0.5</strong>
+  </div>
+
+  <!-- 1. Pendahuluan -->
+  <section>
+    <div class="card">
+      <div class="section-title"><span class="icon">📋</span>1. Pendahuluan</div>
+      <p>
+        Selamat datang di <strong>Kartu Baca</strong> — aplikasi edukasi interaktif yang dirancang
+        khusus untuk membantu anak-anak belajar membaca huruf, kata, suku kata, warna, angka,
+        dan kalimat dengan cara yang menyenangkan.
+      </p>
+      <p>
+        Kebijakan Privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, menyimpan,
+        dan melindungi informasi pengguna, termasuk anak-anak di bawah usia 13 tahun, sesuai
+        dengan ketentuan <strong>Google Play — Kebijakan Data Pengguna</strong>, regulasi
+        <strong>COPPA (Children's Online Privacy Protection Act)</strong>, serta
+        <strong>UU Perlindungan Data Pribadi Indonesia (UU No. 27 Tahun 2022)</strong>.
+      </p>
+      <div class="highlight">
+        ⚠️ <strong>Perhatian Orang Tua/Wali:</strong> Aplikasi ini ditujukan untuk anak-anak
+        berusia <strong>2–12 tahun</strong>. Kami sangat menganjurkan orang tua atau wali
+        untuk mendampingi anak saat menggunakan aplikasi ini dan membaca kebijakan privasi ini
+        dengan seksama.
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Informasi yang Kami Kumpulkan -->
+  <section>
+    <div class="card">
+      <div class="section-title"><span class="icon">📊</span>2. Informasi yang Kami Kumpulkan</div>
+
+      <div class="highlight">
+        ✅ <strong>Kartu Baca TIDAK mengumpulkan data pribadi anak secara langsung</strong>,
+        seperti nama, alamat e-mail, foto, nomor telepon, atau lokasi.
+      </div>
+
+      <p>Data yang mungkin dikumpulkan secara otomatis oleh sistem (bukan oleh kami):</p>
+      <table>
+        <thead>
+          <tr><th>Jenis Data</th><th>Dikumpulkan?</th><th>Keterangan</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Nama / Identitas Anak</td><td>❌ Tidak</td><td>Tidak diminta</td></tr>
+          <tr><td>E-mail / Nomor Telepon</td><td>❌ Tidak</td><td>Tidak diminta</td></tr>
+          <tr><td>Lokasi (GPS)</td><td>❌ Tidak</td><td>Tidak diakses</td></tr>
+          <tr><td>Foto / Kamera</td><td>❌ Tidak</td><td>Tidak diakses</td></tr>
+          <tr><td>Kontak Perangkat</td><td>❌ Tidak</td><td>Tidak diakses</td></tr>
+          <tr><td>Data Penggunaan Anonim</td><td>⚠️ Mungkin</td><td>Melalui Firebase Analytics (anonim, tidak dapat diidentifikasi)</td></tr>
+          <tr><td>Laporan Crash</td><td>⚠️ Mungkin</td><td>Melalui Firebase Crashlytics (tanpa data pribadi)</td></tr>
+          <tr><td>Versi OS / Perangkat</td><td>⚠️ Mungkin</td><td>Untuk optimasi performa</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 3. Perlindungan Anak (COPPA) -->
+  <section>
+    <div class="card">
+      <div class="section-title"><span class="icon">🛡️</span>3. Perlindungan Anak (COPPA & Kebijakan Google Play)</div>
+      <p>
+        Karena aplikasi ini ditujukan untuk anak-anak di bawah 13 tahun, kami mematuhi
+        ketentuan berikut:
+      </p>
+      <ul>
+        <li>🚫 <strong>Tidak ada iklan berbasis perilaku</strong> yang ditargetkan kepada anak-anak.</li>
+        <li>🚫 <strong>Tidak ada fitur jejaring sosial</strong> atau interaksi antar pengguna.</li>
+        <li>🚫 <strong>Tidak ada pembelian dalam aplikasi (in-app purchase)</strong> yang dapat diakses anak tanpa persetujuan orang tua.</li>
+        <li>🚫 <strong>Tidak ada tautan keluar</strong> ke situs web atau layanan lain.</li>
+        <li>✅ Konten sepenuhnya bersifat <strong>edukatif dan aman</strong> untuk anak.</li>
+        <li>✅ Tidak mengumpulkan <strong>identitas pengguna yang dapat dilacak</strong>.</li>
+        <li>✅ Tidak ada fitur <strong>obrolan, komentar, atau forum</strong>.</li>
+      </ul>
+      <div class="warning">
+        🔴 Jika Anda mencurigai bahwa anak Anda telah memberikan data pribadi kepada kami
+        tanpa sepengetahuan Anda, segera hubungi kami di alamat yang tercantum di bagian
+        Kontak agar kami dapat segera menghapusnya.
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Penggunaan Informasi -->
+  <section>
+    <div class="card">
+      <div class="section-title"><span class="icon">🔍</span>4. Penggunaan Informasi</div>
+      <p>Data anonim yang dikumpulkan secara otomatis <em>hanya</em> digunakan untuk:</p>
+      <ul>
+        <li>Memantau dan meningkatkan stabilitas serta performa aplikasi.</li>
+        <li>Mendeteksi dan memperbaiki bug atau crash.</li>
+        <li>Memahami fitur mana yang paling sering digunakan (statistik agregat).</li>
+      </ul>
+      <p>
+        Data tersebut <strong>tidak dijual, disewakan, atau dibagikan</strong> kepada pihak
+        ketiga untuk tujuan pemasaran atau komersial.
+      </p>
+    </div>
+  </section>
+
+  <!-- 5. Layanan Pihak Ketiga -->
+  <section>
+    <div class="card">
+      <div class="section-title"><span class="icon">🔗</span>5. Layanan Pihak Ketiga</div>
+      <p>Aplikasi menggunakan layanan pihak ketiga berikut yang mungkin mengumpulkan data anonim:</p>
+      <table>
+        <thead>
+          <tr><th>Layanan</th><th>Tujuan</th><th>Kebijakan Privasi</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Google Firebase Analytics</td>
+            <td>Statistik penggunaan anonim</td>
+            <td><a href="https://firebase.google.com/support/privacy" target="_blank">firebase.google.com/support/privacy</a></td>
+          </tr>
+          <tr>
+            <td>Firebase Crashlytics</td>
+            <td>Laporan crash & error</td>
+            <td><a href="https://firebase.google.com/support/privacy" target="_blank">firebase.google.com/support/privacy</a></td>
+          </tr>
+          <tr>
+            <td>Google Play Services</td>
+            <td>Distribusi & pembaruan aplikasi</td>
+            <td><a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        Semua layanan di atas beroperasi sesuai dengan kebijakan privasi mereka
+        masing-masing dan tunduk pada peraturan perlindungan data yang berlaku, termasuk
+        regulasi anak di bawah umur.
+      </p>
+    </div>
+  </section>
+
+  <!-- 6. Izin Aplikasi -->
+  <section>
+    <div class="card">
+      <div class="section-title"><span class="icon">🔐</span>6. Izin Aplikasi (App Permissions)</div>
+      <p>Aplikasi Kartu Baca hanya meminta izin yang diperlukan:</p>
+      <table>
+        <thead>
+          <tr><th>Izin</th><th>Diperlukan?</th><th>Alasan</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>INTERNET</td><td>✅ Ya</td><td>Sinkronisasi update & laporan crash anonim</td></tr>
+          <tr><td>READ_EXTERNAL_STORAGE</td><td>❌ Tidak</td><td>Tidak diperlukan</td></tr>
+          <tr><td>CAMERA</td><td>❌ Tidak</td><td>Tidak diperlukan</td></tr>
+          <tr><td>MICROPHONE</td><td>❌ Tidak</td><td>Tidak diperlukan</td></tr>
+          <tr><td>ACCESS_FINE_LOCATION</td><td>❌ Tidak</td><td>Tidak diperlukan</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 7. Keamanan Data -->
+  <section>
+    <div class="card">
+      <div class="section-title"><span class="icon">🔒</span>7. Keamanan Data</div>
+      <p>
+        Kami berkomitmen untuk melindungi keamanan data pengguna dengan langkah-langkah berikut:
+      </p>
+      <ul>
+        <li>Seluruh komunikasi jaringan menggunakan protokol <strong>HTTPS / TLS</strong>.</li>
+        <li>Tidak ada data sensitif yang disimpan di perangkat pengguna.</li>
+        <li>Akses ke sistem backend dibatasi dengan kontrol akses yang ketat.</li>
+        <li>Pemantauan rutin terhadap potensi kerentanan keamanan.</li>
+      </ul>
+      <div class="highlight">
+        🔔 Meskipun kami telah menerapkan langkah-langkah keamanan yang kuat, tidak ada
+        sistem yang dapat menjamin keamanan 100%. Kami akan segera memberitahu pengguna
+        jika terjadi pelanggaran keamanan yang signifikan.
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Hak Orang Tua / Wali -->
+  <section>
+    <div class="card">
+      <div class="section-title"><span class="icon">👨‍👩‍👧</span>8. Hak Orang Tua &amp; Wali</div>
+      <p>Sebagai orang tua atau wali yang sah, Anda memiliki hak untuk:</p>
+      <ol>
+        <li><strong>Meninjau</strong> data apa pun yang telah dikumpulkan terkait anak Anda.</li>
+        <li><strong>Meminta penghapusan</strong> data yang berkaitan dengan anak Anda.</li>
+        <li><strong>Menolak</strong> pengumpulan data lebih lanjut dengan menghapus instalasi aplikasi.</li>
+        <li><strong>Meminta klarifikasi</strong> tentang praktik data kami kapan saja.</li>
+      </ol>
+      <p>
+        Untuk menggunakan hak-hak tersebut, silakan hubungi kami melalui informasi kontak
+        di bagian akhir kebijakan ini. Kami akan merespons permintaan Anda dalam waktu
+        <strong>maksimal 14 hari kerja</strong>.
+      </p>
+    </div>
+  </section>
+
+  <!-- 9. Retensi Data -->
+  <section>
+    <div class="card">
+      <div class="section-title"><span class="icon">🗂️</span>9. Retensi &amp; Penghapusan Data</div>
+      <p>
+        Data anonim analitik disimpan selama <strong>maksimal 14 bulan</strong> oleh layanan
+        Google Firebase sesuai dengan kebijakan standar mereka. Setelah periode tersebut,
+        data akan dihapus secara otomatis.
+      </p>
+      <p>
+        Anda dapat menghapus semua data lokal aplikasi kapan saja melalui:
+        <strong>Pengaturan Perangkat → Aplikasi → Kartu Baca → Hapus Data</strong>.
+      </p>
+    </div>
+  </section>
+
+  <!-- 10. Perubahan Kebijakan -->
+  <section>
+    <div class="card">
+      <div class="section-title"><span class="icon">📝</span>10. Perubahan Kebijakan Privasi</div>
+      <p>
+        Kami dapat memperbarui Kebijakan Privasi ini dari waktu ke waktu untuk mencerminkan
+        perubahan pada praktik kami atau karena alasan operasional, hukum, atau regulasi
+        lainnya.
+      </p>
+      <p>
+        Perubahan yang signifikan akan diberitahukan melalui:
+      </p>
+      <ul>
+        <li>Notifikasi dalam aplikasi saat pembaruan tersedia.</li>
+        <li>Pembaruan tanggal "Terakhir diperbarui" di bagian atas halaman ini.</li>
+        <li>Pengumuman di halaman Google Play Store aplikasi.</li>
+      </ul>
+      <p>
+        Penggunaan berkelanjutan atas aplikasi setelah perubahan dianggap sebagai
+        penerimaan atas kebijakan yang telah diperbarui.
+      </p>
+    </div>
+  </section>
+
+  <!-- 11. Yurisdiksi & Hukum yang Berlaku -->
+  <section>
+    <div class="card">
+      <div class="section-title"><span class="icon">⚖️</span>11. Yurisdiksi &amp; Hukum yang Berlaku</div>
+      <p>Kebijakan Privasi ini tunduk pada hukum yang berlaku di <strong>Indonesia</strong>, termasuk:</p>
+      <ul>
+        <li>UU No. 27 Tahun 2022 tentang Perlindungan Data Pribadi</li>
+        <li>UU No. 11 Tahun 2008 tentang Informasi dan Transaksi Elektronik (ITE)</li>
+        <li>Peraturan Pemerintah No. 71 Tahun 2019 tentang Penyelenggaraan Sistem Elektronik</li>
+        <li>COPPA (Children's Online Privacy Protection Act) — untuk pengguna global</li>
+        <li>Kebijakan Program Developer Google Play</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 12. Kontak -->
+<!--  <section>-->
+<!--    <div class="card">-->
+<!--      <div class="section-title"><span class="icon">📬</span>12. Hubungi Kami</div>-->
+<!--      <p>-->
+<!--        Jika Anda memiliki pertanyaan, kekhawatiran, atau permintaan terkait kebijakan privasi-->
+<!--        ini atau data anak Anda, silakan hubungi kami:-->
+<!--      </p>-->
+<!--      <div class="contact-grid">-->
+<!--        <div class="contact-item">-->
+<!--          <div class="ci-icon">📧</div>-->
+<!--          <strong>E-mail</strong>-->
+<!--          <a href="mailto:privacy@kartubaca.id">privacy@kartubaca.id</a>-->
+<!--        </div>-->
+<!--        <div class="contact-item">-->
+<!--          <div class="ci-icon">🌐</div>-->
+<!--          <strong>Website</strong>-->
+<!--          <a href="https://kartubaca.id" target="_blank">kartubaca.id</a>-->
+<!--        </div>-->
+<!--        <div class="contact-item">-->
+<!--          <div class="ci-icon">🏢</div>-->
+<!--          <strong>Pengembang</strong>-->
+<!--          <span style="font-size:.88rem;">Tim Kartu Baca<br>Indonesia</span>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="highlight" style="margin-top:18px;">-->
+<!--        ⏰ Kami berkomitmen untuk merespons setiap pertanyaan dalam-->
+<!--        <strong>1–14 hari kerja</strong>.-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </section>-->
+
+  <!-- Persetujuan -->
+  <section>
+    <div class="card" style="text-align:center; background: linear-gradient(135deg,#FFF3E0,#FFF9F0);">
+      <div style="font-size:2.5rem;">🎓</div>
+      <h2 style="color:var(--primary); margin: 10px 0 8px;">Komitmen Kami</h2>
+      <p style="max-width:580px; margin: 0 auto; color: var(--muted);">
+        Kartu Baca berkomitmen untuk selalu menjadi aplikasi edukasi yang <strong>aman, terpercaya,
+        dan ramah anak</strong>. Privasi dan keamanan si kecil adalah prioritas utama kami dalam
+        setiap keputusan pengembangan produk.
+      </p>
+      <p style="margin-top:12px; font-weight:700; color:var(--primary);">
+        📖 Belajar Membaca, Tumbuh Bersama Kartu Baca!
+      </p>
+    </div>
+  </section>
+
+</div><!-- /container -->
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer>
+  <div class="container">
+    <p>© 2024–2026 Kartu Baca. Seluruh hak cipta dilindungi undang-undang.</p>
+    <p style="margin-top:6px;">
+      Versi Aplikasi: <strong>1.0.5</strong> &nbsp;|&nbsp;
+      Kebijakan Privasi versi <strong>1.0.5</strong> &nbsp;|&nbsp;
+      Berlaku mulai: <strong>23 April 2026</strong>
+    </p>
+    <p style="margin-top:6px;">
+      Dibuat sesuai dengan
+      <a href="https://play.google.com/about/developer-content-policy/" target="_blank" style="color:var(--primary);">Kebijakan Program Developer Google Play</a>
+      &amp; <a href="https://www.ftc.gov/legal-library/browse/rules/childrens-online-privacy-protection-rule-coppa" target="_blank" style="color:var(--primary);">COPPA</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
+
